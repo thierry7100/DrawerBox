@@ -1,0 +1,38 @@
+<inkscape-extension>
+	<name>Générateur cases pour boîte</_name>
+	<id>fr.fablab-lannion.inkscape.drawerbox</id>
+	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+	<dependency type="executable" location="extensions">drawerbox.py</dependency>
+	<dependency type="executable" location="extensions">th_inkscape_path.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<dependency type="executable" location="extensions">simpletransform.py</dependency>
+	<dependency type="executable" location="extensions">cubicsuperpath.py</dependency>
+	<dependency type="executable" location="extensions">cspsubdiv.py</dependency>
+	<dependency type="executable" location="extensions">bezmisc.py</dependency>
+	<param name="unit" type="enum" _gui-text="Unit">
+		<_item value="mm">mm</_item>
+		<_item value="cm">cm</_item>
+		<_item value="m">m</_item>
+		<_item value="km">km</_item>
+		<_item value="in">in</_item>
+		<_item value="ft">ft</_item>
+		<_item value="yd">yd</_item>
+		<_item value="pt">pt</_item>
+		<_item value="px">px</_item>
+		<_item value="pc">pc</_item>
+	</param>
+	<param name="thickness" type="float" min="1.0" max="10.0" gui-text="Epaisseur matériau">3.0</param>
+	<param name="zc" type="float" min="15.0" max="1000.0" _gui-text="Hauteur cases">50.0</param>
+	<param name="burn_factor" type="float" min="0.0" max="10" _gui-text="Compensation faisceau laser">0.1</param>
+	<param name="has_bottom" type="boolean" _gui-text="Generation fond de cases">true</param>
+	<param name="Mode_Debug" type="boolean" _gui-text="Debug Info">true</param>
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Fablab" />
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">drawerbox.py</command>
+	</script>
+</inkscape-extension>
