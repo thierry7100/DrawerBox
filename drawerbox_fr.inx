@@ -1,5 +1,5 @@
 <inkscape-extension>
-	<name>drawer casing generation</_name>
+	<name>Générateur cases pour boîte</_name>
 	<id>fr.fablab-lannion.inkscape.drawerbox</id>
 	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
 	<dependency type="executable" location="extensions">drawerbox.py</dependency>
@@ -21,11 +21,11 @@
 		<_item value="px">px</_item>
 		<_item value="pc">pc</_item>
 	</param>
-	<param name="thickness" type="float" min="1.0" max="10.0" gui-text="Material thickness">3.0</param>
-	<param name="zc" type="float" min="15.0" max="1000.0" gui-text="Casing height">50.0</param>
-	<param name="burn_factor" type="float" min="0.0" max="10" gui-text="Laser beam width compensation">0.1</param>
-	<param name="has_bottom" type="boolean" gui-text="Bottom casing generation">true</param>
-	<param name="Mode_Debug" type="boolean" gui-text="Debug Info">true</param>
+	<param name="thickness" type="float" min="1.0" max="10.0" gui-text="Epaisseur matériau">3.0</param>
+	<param name="zc" type="float" min="15.0" max="1000.0" _gui-text="Hauteur cases">50.0</param>
+	<param name="burn_factor" type="float" min="0.0" max="10" _gui-text="Compensation faisceau laser">0.1</param>
+	<param name="has_bottom" type="boolean" _gui-text="Generation fond de cases">true</param>
+	<param name="Mode_Debug" type="boolean" _gui-text="Debug Info">true</param>
 	<effect>
 		<object-type>all</object-type>
 		<effects-menu>

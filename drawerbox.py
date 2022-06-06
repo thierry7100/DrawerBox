@@ -291,9 +291,9 @@ class wall:
         #Now draw right side, with notches if there is a contact
         if (self.Contact & CONTACT_RIGHT) or (self.Contact & CONTACT_TOP):
             for i in range(zNotches):
-                path.LineToVRel(zNotchesSize-burn_factor)
+                path.LineTo(self.length, zNotchesSize + 2*i*zNotchesSize - burn_factor)
                 path.LineToHRel(thickness)
-                path.LineToVRel(zNotchesSize/2.0 + burn_factor)
+                path.LineToVRel(zNotchesSize/2.0 + 2*burn_factor)
                 path.LineToHRel(-thickness)
                 path.LineToVRel(zNotchesSize/2.0)
         path.LineTo(self.length, height)
@@ -330,9 +330,9 @@ class wall:
                             xEnd = xStart - lNotchesSize
                             yStart = self.y0
                             yEnd = self.y1
-                        path.LineToHRel(-lNotchesSize + burn_factor)
+                        path.LineTo(lastPos - lNotchesSize - 2*i*lNotchesSize + burn_factor, height)
                         path.LineToVRel(thickness)
-                        path.LineToHRel(-lNotchesSize - burn_factor)
+                        path.LineToHRel(-lNotchesSize - 2*burn_factor)
                         path.LineToVRel(-thickness)
                         BottomHoles.append((xStart, yStart, xEnd, yEnd))
                 path.LineTo(cross[0] + thickness, height)
@@ -369,18 +369,18 @@ class wall:
                     xEnd = xStart - lNotchesSize
                     yStart = self.y0
                     yEnd = self.y1
-                path.LineToHRel(-lNotchesSize + burn_factor)
+                path.LineTo(lastPos - lNotchesSize - 2*i*lNotchesSize + burn_factor, height)
                 path.LineToVRel(thickness)
-                path.LineToHRel(-lNotchesSize - burn_factor)
+                path.LineToHRel(-lNotchesSize - 2*burn_factor)
                 path.LineToVRel(-thickness)
                 BottomHoles.append((xStart, yStart, xEnd, yEnd))
         path.LineTo(0, height)
         #then left side
         if (self.Contact & CONTACT_LEFT) or (self.Contact & CONTACT_BOTTOM):
             for i in range(zNotches):
-                path.LineToVRel(-zNotchesSize+burn_factor)
+                path.LineTo(0, height - zNotchesSize - 2*i*zNotchesSize + burn_factor)
                 path.LineToHRel(-thickness)
-                path.LineToVRel(-zNotchesSize/2.0 -burn_factor)
+                path.LineToVRel(-zNotchesSize/2.0 -2*burn_factor)
                 path.LineToHRel(thickness)
                 path.LineToVRel(-zNotchesSize/2.0)
         path.LineTo(0, 0)
