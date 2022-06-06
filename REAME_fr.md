@@ -1,12 +1,12 @@
 #Générateur de cases pour intérieur de boîtes
 ## Présentation
 
-Lors de l'utilisation de mon générateur de boîtes ([Lien Github](https://github.com/thierry7100/GenBox) , les cases générées (simples rangées et colonnes régulières) ne sont pas toujours adapatées au besoin.
-Et pour couvrir tous les cas, le nombre de aparmètres serait faramineux.
+Lors de l'utilisation de mon générateur de boîtes ([Lien Github](https://github.com/thierry7100/GenBox) , les cases générées (simples rangées et colonnes régulières) ne sont pas toujours adaptées au besoin.
+Et pour couvrir tous les cas, le nombre de paramètres serait faramineux.
 J'ai donc décidé de m'y prendre autrement. 
 
-Avec cette extension, tout part d'un dessin (cel tombe bien, Inkscape est là pour cela). Donc il faut un dessin des cases que l'on souhaite réaliser. 
-Attention ce dessin doit être uniquement composé de **réctangles** et les seules directions autorisées sont horizontales et verticales. Pas de cases avec des côtés non orthogonaux !
+Avec cette extension, tout part d'un dessin (cela tombe bien, Inkscape est là pour cela). Donc il faut un dessin des cases que l'on souhaite réaliser. 
+Attention ce dessin doit être uniquement composé de **rectangles** et les seules directions autorisées sont horizontales et verticales. Pas de cases avec des côtés non orthogonaux !
 
 ## Installation du logiciel
 
@@ -24,7 +24,7 @@ L'outil est capable de générer des connexions bord à bord entre des cloisons 
 ![c](/home/thierry/DrawerBox/Connection1.png  "Cloison bord à bord")
 
 J'ai ici dessiné chaque cloison avec une couleur différente pour cet exemple, mais les couleurs n'ont aucune signification pour cette extension.
-Il faut  ensuite correctement aligner les rectangles. Pour cela utiliser les fonctions d'Inkscape "aligner bord droit de l'objet au bord gauche de l'ancre" ou haut et bas... Pour que les jonctions soient reconnues le bord droit de la cloison horizontale doit coincider avec le bord gauche de la cloison verticale (voud pouvez évidemment échanger droite et gauche et horrizontal et vertical). Le programme arrondit toutes les corrdonnés au dixième de mm, les valeurs arrondies **DOIVENT** correspondre 
+Il faut  ensuite correctement aligner les rectangles. Pour cela utiliser les fonctions d'Inkscape "aligner bord droit de l'objet au bord gauche de l'ancre" ou haut et bas... Pour que les jonctions soient reconnues le bord droit de la cloison horizontale doit coïncider avec le bord gauche de la cloison verticale (voud pouvez évidemment échanger droite et gauche et horizontal et vertical). Le programme arrondit toutes les coordonnés au dixième de mm, les valeurs arrondies **DOIVENT** correspondre 
 
 Il est possible d'avoir des connexions à droite et à gauche (recouvrantes) sur une cloison. Les encoches sont prévues pour cela, au dessus à droite et en haut et en dessous a droite et en bas.
 
@@ -32,7 +32,7 @@ Il est également possible d'avoir des assemblages à mi bois avec des cloisons 
 
 ![ ](/home/thierry/DrawerBox/Connection2.png  "cloison qui se croisent")
 
-Dans ce cas, les cloisons doivent complètement traverser et "dépaser" d'au moins 0.1mm (arrondi du programme). Sinon, il n'u aura pas de jonction tracée puisque la connexion ne sera pas bord à bord ni traversante ! 
+Dans ce cas, les cloisons doivent complètement traverser et "dépasser" d'au moins 0.1mm (arrondi du programme). Sinon, il n'y aura pas de jonction tracée puisque la connexion ne sera ni bord à bord ni traversante ! 
 
 Vous pouvez également avoir des cloisons qui ne se touchent pas, dans ce cas il n'y aura pas d'attaches sur les côtés.
 
@@ -45,21 +45,21 @@ Ici encore, les couleurs sont juste là pour identifier les différentes cloison
 ## Utilisation de l'extension
 
 Une fois le dessin réalisé, sélectionnez le entièrement. Seuls les rectangles sélectionnés seront traités.
-Puis ans les extensions d'inkscape choissisez "fablab/générateur de cases pour boîte". La boîte de dialogue suivante doit apparaitre.
+Puis dans les extensions d'Inkscape choisissez "fablab/générateur de cases pour boîte". La boîte de dialogue suivante doit apparaître.
 
 ![ ](/home/thierry/DrawerBox/Dialog.png  "Dialogue de l'extension")
 
-Pour unité, choisissez votre unité haibituelle (mm généralement).
+Pour unité, choisissez votre unité habituelle (mm généralement).
 Ensuite définissez l'épaisseur du matériau (ici 3mm).
 Puis la hauteur des cases.
 
-La valeur de compensation du faisceau laser est destinée à compenser l'épaisseur du faisceau pour obtenir des emboitements assez durs, qui peuvent tenir sans colle (au moins provisoirement). 0.1 mm est une bonne valeur pour le bois fin. Pour d'autres matériaux c'est à ajuster.
+La valeur de compensation du faisceau laser est destinée à compenser l'épaisseur du faisceau pour obtenir des emboîtements assez durs, qui peuvent tenir sans colle (au moins provisoirement). 0.1 mm est une bonne valeur pour le bois fin. Pour d'autres matériaux c'est à ajuster.
 
 Enfin, vous pouvez choisir ou non de dessiner un fond sur votre structure. Je conseille de le faire, cela renforce considérablement la réalisation, mais si vous êtes juste en hauteur...
 
 ## Assemblage
 
-Même pour une réalisation simple, vous vous retrouvez avec un certians nombre de morceaux, il faut donc faire attention pour l'assemblage !
+Même pour une réalisation simple, vous vous retrouvez avec un certains nombre de morceaux, il faut donc faire attention pour l'assemblage !
 Je conseille d'avoir le plan sous les yeux  !
 
 Il me semble préférable de commencer par l'intérieur de la boîte, suivant 
