@@ -27,11 +27,11 @@
 
 from enum import Flag
 import math
-from numbers import Real
-from operator import pos
+#from numbers import Real
+#from operator import pos
 import os.path
-from typing import List
-from more_itertools import last
+#from typing import List
+#from more_itertools import last
 
 from numpy import False_
 import inkex
@@ -277,7 +277,7 @@ class wall:
         PositionInPage = [xpos, ypos]
         name = "wall" + self.id
         path = th_inkscape_path(PositionInPage, group, name)
-        DebugMsg("Creating path("+name+") Position ="+str(PositionInPage)+'\n')
+        DebugMsg("Creating path("+name+") Position ="+str(PositionInPage)+", Length="+str(self.length)+'\n')
         path.MoveTo(0, 0)
         #Draw upper side, no notches, but could have crossing(s)
         for cross in self.CrossList:
@@ -301,6 +301,7 @@ class wall:
         #This line has notches (if bottom is present) and could have crossings
         lastPos = self.length
         for cross in reversed(self.CrossList):
+            DebugMsg("lastPos="+str(lastPos)+"cross[0]="+str(cross[0])+'\n')
             if not cross[1]:
                 l = lastPos - cross[0] - thickness
                 if  l < 20:
@@ -341,6 +342,8 @@ class wall:
                 path.LineTo(cross[0], height)
                 lastPos = cross[0]
 
+        DebugMsg("Last or no Cross, lastPos="+str(lastPos)+'\n')
+
         l = lastPos
         if  l < 20:
             lNotches = 0
@@ -374,6 +377,7 @@ class wall:
                 path.LineToHRel(-lNotchesSize - 2*burn_factor)
                 path.LineToVRel(-thickness)
                 BottomHoles.append((xStart, yStart, xEnd, yEnd))
+                DebugMsg("Add BottomHoles, xStart="+str(xStart)+", xEnd"+str(xEnd)+", yStart="+str(yStart)+", yStart="+str(yEnd)+'\n')
         path.LineTo(0, height)
         #then left side
         if (self.Contact & CONTACT_LEFT) or (self.Contact & CONTACT_BOTTOM):
